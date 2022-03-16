@@ -1,0 +1,63 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+test:
+  path: /test
+  controller: App\Controller\MessageController::test
+
+# Messages routes
+
+message_create:
+  path: message/create
+  controller: App\Controller\MessageController::create
+  methods: [POST]
+
+message_remove:
+  path: message/remove/{id}
+  controller: App\Controller\MessageController::remove
+  methods: [DELETE]
+
+message_list:
+  path: message/list
+  controller: App\Controller\MessageController::messages
+  methods: [GET]
+
+message_status:
+    path: message/status/{id}
+    controller: App\Controller\MessageController::status
+    methods: [PUT]
+
+# Photos routes
+
+photo_list:
+  path: photo/list/
+  controller: App\Controller\ImageController::list
+  methods: [GET]
+  
+photo_upload:
+  path: photo/upload
+  controller: App\Controller\ImageController::upload
+  methods: [POST]
+
+photo_edit:
+  path: photo/edit/{id}
+  controller: App\Controller\ImageController::edit
+  methods: [POST]
+
+photo_detail:
+  path: photo/detail/{id}
+  controller: App\Controller\ImageController::detail
+  methods: [GET]
+
+photo_remove:
+  path: photo/remove/{id}
+  controller: App\Controller\ImageController::remove
+  methods: [DELETE]
+
+
+# User login routes
+login:
+  path: user/login
+  controller: App\Controller\UserLogginController::login
+  methods: [POST]
